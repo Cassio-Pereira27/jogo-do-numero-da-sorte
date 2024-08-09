@@ -20,11 +20,18 @@ function verificarChute() {
     let chute = document.querySelector('input').value;
     
     if(chute == numeroSecreto){
-        exibirTextoNaTela('h1', 'Acertou!');
-        let palavraTentativas = tentativas > 1? 'tentativas':'tentativas';
-        let mensagemTentativas = 'Retornei de férias hoje dia 9!';
-        exibirTextoNaTela('p', mensagemTentativas);
-        document.getElementById('reiniciar').removeAttribute('disabled');
+        if(numeroSecreto == 9){
+            exibirTextoNaTela('h1', 'Acertou!');
+            let mensagemTentativas = 'Retornei de férias hoje dia 9!';
+            exibirTextoNaTela('p', mensagemTentativas);
+            document.getElementById('reiniciar').removeAttribute('disabled');
+        }else{
+            exibirTextoNaTela('h1', 'Acertou!');
+            let palavraTentativas = tentativas > 1? 'tentativas':'tentativas';
+            let mensagemTentativas = `Você descobriu o número secreto com ${tentativas} ${palavraTentativas}!`;
+            exibirTextoNaTela('p', mensagemTentativas);
+            document.getElementById('reiniciar').removeAttribute('disabled');
+        }
     } else{
         if(chute > numeroSecreto){
             exibirTextoNaTela('p', 'O número secreto é menor');

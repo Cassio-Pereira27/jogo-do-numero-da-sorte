@@ -22,7 +22,7 @@ function verificarChute() {
     if(chute == numeroSecreto){
         exibirTextoNaTela('h1', 'Acertou!');
         let palavraTentativas = tentativas > 1? 'tentativas':'tentativas';
-        let mensagemTentativas = 'Retornei de férias hoje dia 09!';
+        let mensagemTentativas = 'Retornei de férias hoje dia 9!';
         exibirTextoNaTela('p', mensagemTentativas);
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else{
@@ -60,7 +60,7 @@ function limparCampo(){
 }
 
 function reiniciarJogo(){
-    numeroSecreto = 9;
+    numeroSecreto = gerarNumeroAleatorio();
     limparCampo();
     tentativas = 1;
     exibirMensagemInicial();
